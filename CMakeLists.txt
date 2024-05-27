@@ -1,13 +1,33 @@
-#defining the version of CMake to be used
-#modern CMake projects use at least version 3.0.0
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.10)
 
-#defining the name of the project and the programming language(CXX -> C++)
-project(webcrawler)
+# Project name
+project(BookScraper)
 
-#adding a subdirectory
-#IMPORTANT: the subdirectories  added should also contain in them a CMakeLists.txt file
-add_subdirectory(src)
-include_directories("${CMAKE_SOURCE_DIR}/includes/vcpkg/installed/x64-linux/include/curl"
-    "${CMAKE_SOURCE_DIR}/includes/vcpkg/installed/x64-linux/include/libxml"
-    "${CMAKE_SOURCE_DIR}/includes/vcpkg/installed/x64-linux/include/libxml2")
+# Set C standard
+set(CMAKE_C_STANDARD 99)
+
+# Integrate vcpkg
+if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+    set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+        CACHE STRING "")
+endif()
+
+# Find libcurl package
+find_package(CURL REQUIRED)
+
+# Find libxml2 package
+find_package(LibXml2 REQUIRED)
+
+# Include directories
+include_directories(${CURL_INCLUDE_DIRS})
+include_directories(${LIBXML2_INCLUDE_DIRS})
+
+# Source files
+set(SOURCES src/main.c)
+
+# Add executable
+add_executable(BookScraper ${SOURCES})
+
+# Link libraries
+target_link_libraries(BookScraper ${CURL_LIBRARIES} ${LIBXML2_LIBRARIES})
+

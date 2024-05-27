@@ -63,72 +63,42 @@ CMAKE_BINARY_DIR = /home/samsepi0l/webcrawlergit/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: src/all
+all: CMakeFiles/BookScraper.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: src/preinstall
+preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: src/clean
+clean: CMakeFiles/BookScraper.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory src
-
-# Recursive "all" directory target.
-src/all: src/main/all
-.PHONY : src/all
-
-# Recursive "preinstall" directory target.
-src/preinstall: src/main/preinstall
-.PHONY : src/preinstall
-
-# Recursive "clean" directory target.
-src/clean: src/main/clean
-.PHONY : src/clean
-
-#=============================================================================
-# Directory level rules for directory src/main
-
-# Recursive "all" directory target.
-src/main/all: src/main/CMakeFiles/webcrawler.dir/all
-.PHONY : src/main/all
-
-# Recursive "preinstall" directory target.
-src/main/preinstall:
-.PHONY : src/main/preinstall
-
-# Recursive "clean" directory target.
-src/main/clean: src/main/CMakeFiles/webcrawler.dir/clean
-.PHONY : src/main/clean
-
-#=============================================================================
-# Target rules for target src/main/CMakeFiles/webcrawler.dir
+# Target rules for target CMakeFiles/BookScraper.dir
 
 # All Build rule for target.
-src/main/CMakeFiles/webcrawler.dir/all:
-	$(MAKE) $(MAKESILENT) -f src/main/CMakeFiles/webcrawler.dir/build.make src/main/CMakeFiles/webcrawler.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/main/CMakeFiles/webcrawler.dir/build.make src/main/CMakeFiles/webcrawler.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/samsepi0l/webcrawlergit/build/CMakeFiles --progress-num=1,2 "Built target webcrawler"
-.PHONY : src/main/CMakeFiles/webcrawler.dir/all
+CMakeFiles/BookScraper.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BookScraper.dir/build.make CMakeFiles/BookScraper.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BookScraper.dir/build.make CMakeFiles/BookScraper.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/samsepi0l/webcrawlergit/build/CMakeFiles --progress-num=1,2 "Built target BookScraper"
+.PHONY : CMakeFiles/BookScraper.dir/all
 
 # Build rule for subdir invocation for target.
-src/main/CMakeFiles/webcrawler.dir/rule: cmake_check_build_system
+CMakeFiles/BookScraper.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/samsepi0l/webcrawlergit/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/main/CMakeFiles/webcrawler.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/BookScraper.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/samsepi0l/webcrawlergit/build/CMakeFiles 0
-.PHONY : src/main/CMakeFiles/webcrawler.dir/rule
+.PHONY : CMakeFiles/BookScraper.dir/rule
 
 # Convenience name for target.
-webcrawler: src/main/CMakeFiles/webcrawler.dir/rule
-.PHONY : webcrawler
+BookScraper: CMakeFiles/BookScraper.dir/rule
+.PHONY : BookScraper
 
 # clean rule for target.
-src/main/CMakeFiles/webcrawler.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/main/CMakeFiles/webcrawler.dir/build.make src/main/CMakeFiles/webcrawler.dir/clean
-.PHONY : src/main/CMakeFiles/webcrawler.dir/clean
+CMakeFiles/BookScraper.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BookScraper.dir/build.make CMakeFiles/BookScraper.dir/clean
+.PHONY : CMakeFiles/BookScraper.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
